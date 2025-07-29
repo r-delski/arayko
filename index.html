@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ARRAY KO</title>
+  <style>
+    :root {
+      --primary-bg: #f9fafb;
+      --accent-bg: #e0f2fe;
+      --text-color: #1f2937;
+      --button-bg: #3b82f6;
+      --button-hover: #2563eb;
+      --array-box-bg: #eff6ff;
+    }
+
+    body {
+      background: var(--primary-bg);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      color: var(--text-color);
+    }
+
+    .container {
+      text-align: center;
+      background-color: white;
+      padding: 2rem;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+      max-width: 700px;
+      width: 90%;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .desc {
+      color: #6b7280;
+      margin-bottom: 1.5rem;
+    }
+
+    button {
+      margin-top: 1rem;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 8px;
+      background-color: var(--button-bg);
+      color: white;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    button:hover {
+      background-color: var(--button-hover);
+      transform: scale(1.03);
+    }
+
+    .array-box {
+      margin-top: 1.5rem;
+      background: var(--array-box-bg);
+      padding: 1rem 1.5rem;
+      border-radius: 10px;
+      font-family: 'Courier New', monospace;
+      white-space: pre-wrap;
+      text-align: left;
+      line-height: 1.4;
+      box-shadow: inset 0 0 5px rgba(0,0,0,0.03);
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    footer {
+      margin-top: 2rem;
+      font-size: 0.85rem;
+      color: #9ca3af;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>👨‍💻 ARRAY KO</h1>
+    <p class="desc">What is Array?</p>
+
+    <button onclick="showArrayInfo()">Wag...</button>
+    <div id="arrayInfo" class="array-box hidden"></div>
+
+    <footer>fish-dev</footer>
+  </div>
+
+  <script>
+    function showArrayInfo() {
+      const arrayInfo = document.getElementById("arrayInfo");
+      arrayInfo.classList.remove("hidden");
+
+      const arrayExplanation = [
+        "What is an Array?",
+        "",
+        "An array is a data structure that stores multiple values in a single variable.",
+        "Instead of creating many variables, you can group them together like this:",
+        "",
+        "JavaScript:",
+        "let fruits = ['apple', 'banana', 'cherry'];",
+        "",
+        "Python:",
+        "fruits = ['apple', 'banana', 'cherry']",
+        "",
+        "PHP:",
+        "$fruits = array('apple', 'banana', 'cherry');",
+        "",
+        "Java:",
+        "String[] fruits = {\"apple\", \"banana\", \"cherry\"};",
+        "",
+        "Arrays allow easy looping, sorting, and managing lists of data.",
+        "",
+        "Galing diba? ARRAY KO NA TO! 😂"
+      ];
+
+      arrayInfo.innerText = JSON.stringify(arrayExplanation, null, 2);
+    }
+  </script>
+</body>
+</html>
